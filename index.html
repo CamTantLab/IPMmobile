@@ -8,35 +8,23 @@
 <h1>IPM Dashboard</h1>
     
  <div style="width: 10%; float:left">
- 
-   <div class="dropdown">
-  <button class="dropbtn">Select View</button>
-  <div class="dropdown-content">
-    <a href="#">Compatibility Chart</a>
-    <a href="#">Layout Map</a>
-    <a href="#">V1 Sticky Flags</a>
-  </div>
-</div>
+  
+   <img id="image" src="images/ChartCompat.png" style="width:90%" /> <br />
+   <div id="fillText"> select something </div>
+   
+  <select id="imgList">
+            <option value="valueOne">Compatibility Chart</option>
+            <option value="valueTwo">V1 Yellow Flags</option>
+            <option value="valueThree">Two 2</option>
+            <option value="valueFour">Three 3</option>
+  </select>
+   
  </div>   
  <div style="width: 90%; float:right">
    
-<div id="content_1" style="display:hidden;">
-
-  <img src="images/ChartCompat.png" style="width:90%">
-  
-<div>
-
-<div id="content_2" style="display:hidden;">
-
-  <img src="images/ChartCompat.png" style="width:30%">
-  
-<div>
-
-<div id="content_3" style="display:hidden;">
-
-  <img src="images/ChartCompat.png" style="width:50%">
-  
-<div>
+   <img src="images/ChartCompat.png" style="width: 90%" name="myImage" />
+   
+ <div>
      
 <button class="button-19" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSdgxnIJlt2Qz-K9tCBFoi3Xuq7maCPH1OIetNsx5TPn36wa4Q/viewform'" role="button">Submit an Issue</button>
 <button class="button-19" onclick="location.href='https://docs.google.com/forms/d/1qLX_0wxjLvNhLz_tGwi6tJDACobhm6vYjSirDvxQlhw/edit#responses'" role="button">View Submissions</button><br>
@@ -45,45 +33,38 @@
 <button class="button-19" onclick="location.href='prods.html'" role="button">Sprays & Bios</button>
 <button class="button-19" onclick="location.href='https://drive.google.com/drive/folders/1ZGBhHeasbzmnYvXWzhy0D6sPOnZi7zRq'" role="button">IPM Documents</button>
 <br>
-     
-
 </center>
-  
-<style>
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
+   
+<script>
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+        var lookupValues = {
+          'valueOne': {
+            'img':'ChartCompat.png',
+            'txt':'some text for 1'
+          },
+          'valueTwo': {
+            'img':'ChartCompat.png',
+            'txt':'other text here'
+          },
+          'valueThree': {
+            'img':'ChartCompat.png',
+            'txt':'a fancy title'
+          },
+          'valueFour': {
+            'img':'4.png',
+            'txt':'an interesting tidbit'
+          }
+        };
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-</style>
-
+        function setClass() {
+            var img = document.getElementById("image");
+            var fillText = document.getElementById("fillText");
+            // get the lookup values with a key matching this.value
+            var values = lookupValues[this.value];
+            img.src = values['img']; // the 'img' value
+            fillText.innerHTML = values['src']; // the 'src' value
+            return false;
+        }
+        document.getElementById("imgList").onchange = setClass;
+        </script>
 </body>
