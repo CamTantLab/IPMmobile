@@ -16,10 +16,10 @@
             <option value="valueFour">Layout Map</option>
   </select><br><br>
    
-<button class="button-19" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSdgxnIJlt2Qz-K9tCBFoi3Xuq7maCPH1OIetNsx5TPn36wa4Q/viewform'" role="button">Submit an Issue</button><br><br>
-<button class="button-19" onclick="location.href='https://docs.google.com/forms/d/1qLX_0wxjLvNhLz_tGwi6tJDACobhm6vYjSirDvxQlhw/edit#responses'" role="button">View Submissions</button><br><br>
-<button class="button-19" onclick="location.href='prods.html'" role="button">Sprays & Bios</button><br><br>
-<button class="button-19" onclick="location.href='https://drive.google.com/drive/folders/1ZGBhHeasbzmnYvXWzhy0D6sPOnZi7zRq'" role="button">IPM Documents</button>
+<button style="width: 80%" class="button-19" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSdgxnIJlt2Qz-K9tCBFoi3Xuq7maCPH1OIetNsx5TPn36wa4Q/viewform'" role="button">Submit an Issue</button><br><br>
+<button style="width: 80%" class="button-19" onclick="location.href='https://docs.google.com/forms/d/1qLX_0wxjLvNhLz_tGwi6tJDACobhm6vYjSirDvxQlhw/edit#responses'" role="button">View Submissions</button><br><br>
+<button style="width: 80%" class="button-19" onclick="location.href='prods.html'" role="button">Sprays & Bios</button><br><br>
+<button style="width: 80%" class="button-19" onclick="location.href='https://drive.google.com/drive/folders/1ZGBhHeasbzmnYvXWzhy0D6sPOnZi7zRq'" role="button">IPM Documents</button>
 <br>
    
  </div>   
@@ -37,12 +37,15 @@
         var lookupValues = {
           'valueOne': {
             'img':'images/ChartCompat.png',
+            'size':'width: 90%',
           },
           'valueTwo': {
             'img':'images/YellowFlags.png',
+            'size':'width: 30%',
           },
           'valueThree': {
             'img':'images/Scout.png',
+            'size':'width: 70%',
           },
           'valueFour': {
             'img':'4.png',
@@ -51,6 +54,7 @@
 
         function setClass() {
             var img = document.getElementById("image");
+            var size = document.getElementById("image");
             var values = lookupValues[this.value];
             img.src = values['img']; // the 'img' value
             fillText.innerHTML = values['src']; // the 'src' value
